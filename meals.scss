@@ -1,0 +1,259 @@
+/* --- Import common SASS variables */
+@import "%CommonSassVarsPath%";
+
+/* --- Import banner specific SASS variables */
+@import "%BannerSassVarsPath%";
+
+.skip-navigation:focus {
+    position: fixed !important;
+    z-index: 10000;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: map-get($colors, global-nav);
+    padding: 15px !important;
+    color: map-get($colors, white-color);
+    text-decoration: none;
+
+    span {
+        text-align: center;
+        padding: 15px 25px;
+        width: 25%;
+        margin: auto;
+    }
+}
+
+.meals-homepage-wrapper,
+.meals-details,
+.meals-category {
+
+    // <------- meals Detail Page and Home Page main carousel card--------->
+    .recipe-carousel {
+        .carousal-content-serves {
+            height: 30px;
+        }
+    }
+
+    .related-recipe-carousel {
+
+        .relatedRecipe {
+            width: 100%;
+            height: auto;
+            float: left;
+
+            .slick-next {
+                right: 16px;
+            }
+
+            .slick-prev {
+                left: 2px;
+            }
+        }
+
+        padding: 40px 30px;
+        background-color: map-get($colors, grey-background);
+
+        // .carousal-card{
+        //     height: 341px;
+        //     .cta{
+        //         position: absolute;
+        //         bottom: 5px;
+        //     }
+        // }
+        .carousal-content-serves {
+            height: 30px;
+        }
+    }
+
+    .homepage-carousal-container {
+        padding: 0 15px 0 0 !important;
+
+        .homepage-carousal-card-container {
+            padding: 0;
+
+            .carousal-card {
+                border: 1px solid map-get($colors, primary-border);
+                padding: 15px;
+                border-radius: 1px;
+                background-color: map-get($colors, white-color);
+
+                img {
+                    width: 100%;
+                }
+
+                .carousal-card-heading {
+                    height: 80px;
+                }
+
+                h3 {
+                    font-weight: bold;
+                    font-size: 18px;
+                    margin-bottom: 0;
+                    margin-top: 10px;
+                    width: 100%;
+                    color: #4b4a4b;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .carousal-content-note {
+                    font-size: 15px;
+                    color: #656465;
+                    display: block;
+                    letter-spacing: -0.2px;
+                    line-height: 20px;
+
+                }
+
+                .carousal-content-serves {
+                    margin: 25px 0 20px 0;
+
+                    span {
+                        font-size: 16px;
+                        font-weight: bold;
+                        letter-spacing: -0.13px;
+                        line-height: 30px;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    font-size: 14px;
+                    font-weight: 600;
+                    background-color: map-get($colors, global-nav);
+                    border: 0;
+                    padding: 10px 0;
+                    color: map-get($colors, white-color);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .slick-slide {
+            height: auto !important;
+            margin-left: 5px;
+            min-height: auto;
+        }
+
+        .slick-next {
+            right: 2px;
+        }
+    }
+
+    @media only screen and (max-width: 479px) and (min-width: 320px) {
+        .related-recipe-carousel.coupons-carousel {
+            margin: 0 !important;
+            padding: 0 0 20px 15px !important;
+
+            .relatedRecipe {
+                padding-right: 0 !important;
+            }
+
+            .carousal-card {
+                width: 60vw !important
+            }
+        }
+
+        .homepage-carousal-container {
+            .homepage-carousal-card-container {
+                .carousal-card {
+                    h3 {
+                        font-size: 14px;
+                        font-weight: bold;
+                        line-height: 18px;
+                    }
+
+                    .carousal-content-note {
+                        font-size: 12px;
+                        letter-spacing: -0.2px;
+                        line-height: 20px;
+                    }
+
+                    .carousal-content-serves span {
+                        font-size: 14px;
+                        font-weight: bold;
+                        letter-spacing: -0.1px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    // .content-block .content-block-inner{
+    //     z-index: 0;
+    // }
+}
+
+.meals-recipe-wrapper {
+    max-width: 1276px !important;
+    margin: 0 auto !important;
+
+    .errorMessagePanel {
+        padding-left: 100px;
+
+        ul {
+            padding-left: 19px;
+        }
+    }
+}
+
+.horizontal-spacer-filter {
+    border-bottom: 1px solid map-get($colors, primary-border);
+}
+
+@media only screen and (max-width: 1439px) and (min-width: 1280px) {
+    .meals-recipe-wrapper {
+        max-width: 1276px !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .carousal-card-heading {
+        height: 120px !important;
+    }
+
+    .meals-recipe-wrapper {
+        max-width: 95% !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 320px) {
+    .carousel-container.coupons-carousel {
+        margin: 0 15px !important;
+    }
+
+    .related-recipe-carousel {
+        margin: 0 !important;
+        padding: 0 0 20px 15px !important;
+
+        .relatedRecipe {
+            padding-right: 0 !important;
+        }
+
+        .carousal-card {
+            width: 60vw !important
+        }
+    }
+
+    .meals-recipe-wrapper {
+        // .content-block-inner{
+        //     z-index: 0;
+        // }
+        max-width: 100% !important;
+        margin: 0 0 !important;
+
+        .errorMessagePanel {
+            padding-left: 0px;
+
+            ul {
+                padding-left: 20px;
+            }
+        }
+    }
+
+}

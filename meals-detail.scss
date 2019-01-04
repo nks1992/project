@@ -1,0 +1,472 @@
+/* --- Import common SASS variables */
+@import "%CommonSassVarsPath%";
+
+/* --- Import banner specific SASS variables */
+@import "%BannerSassVarsPath%";
+
+.meals-details {
+    .meals-description-h3 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    color: map-get($colors, text);
+
+    .breadcrumbs {
+        padding-left: 15px;
+        padding-top: 24px;
+
+        ul li {
+            margin-right: 15px;
+
+            &:nth-last-child(1) {
+                font-weight: 300;
+            }
+        }
+    }
+
+    .contentImage {
+        width: 90%;
+        margin-top: 20px;
+
+        picture {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .sm-head {
+        font-weight: 800;
+        font-size: 13px;
+        letter-spacing: 1px;
+        line-height: 20px;
+
+    }
+
+
+    .sm-head-title p {
+        font-size: 16px;
+        border-right: 1px solid map-get($colors, text);
+        letter-spacing: -0.08px;
+        line-height: 25px;
+    }
+
+    .cooking-details {
+
+        .sm-head-title:nth-child(4n) {
+            p {
+                border: 0
+            }
+        }
+
+        .sm-head-title:nth-last-child(1) {
+            p {
+                border: 0
+            }
+        }
+
+    }
+
+    .sponsorer {
+        p {
+            font-weight: bold;
+        }
+
+        img {
+            width: 55px;
+            margin-left: 10px;
+        }
+    }
+
+    .main-button {
+        background-color: map-get($colors, global-nav);
+        color: map-get($colors, white-color);
+        border: 0;
+        padding: 10px 40px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .meals-main-container {
+        padding-bottom: 50px;
+        border-bottom: 1px solid map-get($colors, primary-border);
+    }
+
+    .meals-recipe-container {
+        padding: 30px;
+        border-bottom: 1px solid map-get($colors, primary-border);
+        padding-left: 0;
+    }
+
+    .ingredients {
+        padding-right: 50px;
+        padding-left: 15px;
+
+        h2 {
+            font-size: 26px;
+        }
+    }
+
+    .check-box-margin {
+        padding: 0;
+    }
+
+    .custom-chkbox {
+        border-bottom: 1px solid map-get($colors, primary-border);
+        padding-left: 15px;
+        padding: 10px 10px 10px 0;
+
+        input {
+            margin-right: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            display: list-item;
+            list-style-position: inside;
+        }
+
+        &:nth-last-child(1) {
+            border-bottom: 0;
+        }
+    }
+
+    .select-all-chkbox {
+        border-bottom: 1px solid map-get($colors, primary-border);
+    }
+
+    .speacial-deal {
+        /* float: right; */
+        display: inline-block;
+        margin-left: 20px;
+        padding: 5px;
+        border: 1px dashed map-get($colors, global-nav);
+        font-size: 12px;
+        color: map-get($colors, global-nav)
+    }
+
+
+    .meals-description-context p {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .add-to-cart-btn {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .cooking-steps-content p {
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .cooking-steps-content {
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    .meals-substitutions-content p {
+        font-size: 14px;
+    }
+
+    .meals-substitutions-content {
+        h6 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    .nutrition,
+    .nutrition-heading {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        h3 {
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .nutrition-info {
+            font-size: 36px;
+        }
+
+        h2 {
+            padding-left: 15px;
+            font-size: 26px;
+            line-height: 20px;
+        }
+
+        span {
+            text-align: center;
+            display: inline-block
+        }
+    }
+
+
+
+    .meals-usda-guidelines {
+        margin-top: 20px;
+
+        h3 {
+            line-height: 16px;
+            font-size: 12px !important;
+        }
+
+    }
+
+    .cooking-steps {
+        ol {
+            padding-left: 20px;
+        }
+
+        .cooking-steps-heading {
+            h2 {
+                font-size: 26px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .cooking-details .sm-head-title p {
+            border-right: 0;
+        }
+
+        .notification-text-mobile-container {
+            display: none;
+        }
+
+        .contentImage {
+            width: 100%;
+            margin-top: 25px
+        }
+
+        .cooking-steps {
+            margin-top: 15px;
+        }
+
+        .meals-recipe-container {
+            padding: 0;
+            padding-bottom: 20px;
+
+            .ingredients {
+                padding: 0;
+                margin: 0;
+                margin-top: 15px;
+            }
+        }
+
+        .add-to-cart-btn {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid map-get($colors, primary-border);
+        }
+
+        .nutrition,
+        .nutrition-heading {
+            h2 {
+                padding-left: 0;
+            }
+
+        }
+    }
+
+    @media screen and (max-width:480px) {
+
+        .nutrition,
+        .nutrition-heading {
+             .nutrition-info {
+                 font-size: 24px;
+             }
+        }
+        .custom-chkbox {
+            &:nth-last-child(1) {
+                border-bottom: 1px solid #dedede;
+            }
+
+        }
+
+        .meals-description-context p {
+            font-size: 16px
+        }
+
+        .meals-description-h3 {
+            font-size: 24px;
+        }
+
+        .contentImage {
+            width: 100%;
+            margin-top: 0;
+
+            picture {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .sm-head {
+            font-weight: 800;
+            font-size: 11px;
+            letter-spacing: 1px;
+            line-height: 20px;
+
+        }
+
+
+        .sm-head-title p {
+            font-size: 13px;
+            line-height: 25px;
+        }
+
+        .main-button {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .ingredients {
+            padding: 0;
+            margin-top: 0;
+
+            h2 {
+                padding: 16px;
+                border-bottom: 1px solid map-get($colors, primary-border);
+                font-size: 18px;
+                margin-top: 0;
+                padding-top: 0;
+            }
+        }
+
+        .meals-main-container {
+            padding-bottom: 30px;
+        }
+
+        .sponsorer {
+            text-align: center;
+            font-weight: bold;
+
+            img {
+                width: 50px;
+                margin-left: 15px;
+            }
+        }
+
+        .sm-head-title p {
+            border-right: 0;
+        }
+
+        .meals-recipe-container {
+            padding: 0;
+
+            .ingredients {
+                padding: 0;
+            }
+        }
+
+        .check-box-margin {
+            border: 0;
+        }
+
+        .custom-chkbox {
+            border-bottom: 1px solid map-get($colors, primary-border);
+            padding-left: 15px;
+
+            p {
+                display: list-item;
+                list-style-position: inside;
+                font-size: 14px;
+            }
+        }
+
+        .meals-recipe-container {
+            .col-xs-12 {
+                padding: 0;
+            }
+        }
+
+        .add-to-cart-btn {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid map-get($colors, primary-border);
+        }
+
+        .cooking-steps {
+            ol {
+                padding-left: 15px;
+            }
+
+            padding: 0 15px;
+
+            .cooking-steps-heading {
+                h2 {
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .cooking-steps-content {
+                p {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .nutrition {
+            .nutrition-heading {
+                width: 100%;
+                padding-top: 0px;
+                text-align: left;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 0;
+            }
+
+            h2 {
+                font-size: 18px;
+                padding-left: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            h3 {
+                font-size: 10px;
+                white-space: nowrap;
+            }
+
+            h4 {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .meals-usda-guidelines {
+        p {
+            line-height: 16px;
+            font-size: 11px;
+        }
+
+    }
+
+    .homepage-carousal-container {
+        .recipe-card {
+            background-color: map-get($colors, white-color);
+
+            .carousal-card {
+                border: 0;
+            }
+        }
+    }
+}

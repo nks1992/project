@@ -1,0 +1,224 @@
+{
+    "code": 200,
+    "result": {
+        "@odata.context": "https://octopus-search.search.windows.net/indexes('json-index')/$metadata#docs",
+        "@odata.count": 22,
+        "@search.facets": {
+            "totalTime_tk@odata.type": "#Collection(Microsoft.Azure.Search.V2017_11_11.QueryResultFacet)",
+            "totalTime_tk": [
+                {
+                    "count": 5,
+                    "value": 15
+                },
+                {
+                    "count": 2,
+                    "value": 10
+                },
+                {
+                    "count": 2,
+                    "value": 20
+                },
+                {
+                    "count": 2,
+                    "value": 30
+                },
+                {
+                    "count": 1,
+                    "value": 25
+                },
+                {
+                    "count": 1,
+                    "value": 75
+                }
+            ],
+            "recipeCuisine_tk@odata.type": "#Collection(Microsoft.Azure.Search.V2017_11_11.QueryResultFacet)",
+            "recipeCuisine_tk": [
+                {
+                    "count": 9,
+                    "value": "American"
+                },
+                {
+                    "count": 3,
+                    "value": "Italian"
+                },
+                {
+                    "count": 3,
+                    "value": "Mexican"
+                },
+                {
+                    "count": 2,
+                    "value": "European"
+                },
+                {
+                    "count": 2,
+                    "value": "Greek"
+                },
+                {
+                    "count": 2,
+                    "value": "Southern"
+                },
+                {
+                    "count": 1,
+                    "value": "Asian"
+                }
+            ],
+            "prepTime_tk@odata.type": "#Collection(Microsoft.Azure.Search.V2017_11_11.QueryResultFacet)",
+            "prepTime_tk": [
+                {
+                    "count": 6,
+                    "value": 10
+                },
+                {
+                    "count": 4,
+                    "value": 15
+                },
+                {
+                    "count": 2,
+                    "value": 20
+                },
+                {
+                    "count": 1,
+                    "value": 5
+                },
+                {
+                    "count": 1,
+                    "value": 30
+                }
+            ],
+            "cookTime_tk@odata.type": "#Collection(Microsoft.Azure.Search.V2017_11_11.QueryResultFacet)",
+            "cookTime_tk": [
+                {
+                    "count": 3,
+                    "value": 5
+                },
+                {
+                    "count": 1,
+                    "value": 60
+                }
+            ],
+            "courseType@odata.type": "#Collection(Microsoft.Azure.Search.V2017_11_11.QueryResultFacet)",
+            "courseType": [
+                {
+                    "count": 22,
+                    "value": "Salads"
+                },
+                {
+                    "count": 7,
+                    "value": "Side Dishes"
+                },
+                {
+                    "count": 2,
+                    "value": "Dinner"
+                },
+                {
+                    "count": 1,
+                    "value": "Appetizers"
+                },
+                {
+                    "count": 1,
+                    "value": "Main Course"
+                }
+            ],
+            "cookingMethod_tk@odata.type": "#Collection(Microsoft.Azure.Search.V2017_11_11.QueryResultFacet)",
+            "cookingMethod_tk": [
+                {
+                    "count": 5,
+                    "value": "Uncooked"
+                },
+                {
+                    "count": 4,
+                    "value": "Blending"
+                },
+                {
+                    "count": 4,
+                    "value": "Chilling"
+                },
+                {
+                    "count": 4,
+                    "value": "Roasting"
+                },
+                {
+                    "count": 3,
+                    "value": "Boiling"
+                },
+                {
+                    "count": 3,
+                    "value": "Knife Skills"
+                },
+                {
+                    "count": 2,
+                    "value": "Saute"
+                },
+                {
+                    "count": 1,
+                    "value": "Freezing"
+                },
+                {
+                    "count": 1,
+                    "value": "Pan Frying"
+                },
+                {
+                    "count": 1,
+                    "value": "Steaming"
+                }
+            ]
+        },
+        "value": [
+            {
+                "@search.score": 3.1972246,
+                "courseType": [
+                    "Salads"
+                ],
+                "formattedName": "better-than-mom-s-7-layer-salad",
+                "recipeYield": 4,
+                "name": "Better than Mom's 7-Layer Salad",
+                "isDeleted": "0",
+                "sourceId_ntk": "0",
+                "id": "0_better-than-mom-s-7-layer-salad",
+                "cookingMethod_tk": [
+                    "Chilling",
+                    "Uncooked"
+                ],
+                "cookingMethod": "Chilling,Uncooked",
+                "author_ntk": "mateja",
+                "recipeCuisine": "American",
+                "recipeCuisine_tk": [
+                    "American"
+                ],
+                "prepTime": "PT15M",
+                "prepTime_tk": 15,
+                "cookTime": null,
+                "cookTime_tk": null,
+                "totalTime": "PT15M",
+                "totalTime_tk": 15
+            },
+            {
+                "@search.score": 3.1972246,
+                "courseType": [
+                    "Salads"
+                ],
+                "formattedName": "caprese-salad-with-crawfish-tails",
+                "recipeYield": 4,
+                "name": "Caprese Salad with Crawfish Tails",
+                "isDeleted": "0",
+                "sourceId_ntk": "0",
+                "id": "0_caprese-salad-with-crawfish-tails",
+                "cookingMethod_tk": [
+                    "Chilling"
+                ],
+                "cookingMethod": "Chilling",
+                "author_ntk": "mateja",
+                "recipeCuisine": "Italian",
+                "recipeCuisine_tk": [
+                    "Italian"
+                ],
+                "prepTime": null,
+                "prepTime_tk": null,
+                "cookTime": null,
+                "cookTime_tk": null,
+                "totalTime": null,
+                "totalTime_tk": null
+            }
+        ]
+    }
+}

@@ -1,0 +1,134 @@
+<div class="col-sm-3 col-md-3 product-level-4 meals-nav-panel">
+  <nav aria-labelledby="facetheading" class="categories-tree" *ngIf="!fromSearchPage">
+    <span *ngFor="let facet of facets">
+      <span *ngIf="facet?.value == linksType">
+        <h2 id="facetheading">{{facet.name}}</h2>
+        <ul class="nav js-filter-nav">
+          <li *ngFor="let filter of facet.subFacets; let k = index">
+            <!-- (click)="selectCuisine(k)" -->
+            <a href="{{dataPrefix}}/category/{{UrlParam}}/{{filter?.value}}.html" [ngClass]="{'active': selectedcuisine == filter?.value}">{{filter?.value}}</a>
+          </li>
+        </ul>
+      </span>
+    </span>
+  </nav>
+
+  <span *ngFor="let facet of facets">
+    <div class="dropdown meals-category-dropdown hidden-sm hidden-md hidden-lg" *ngIf="!fromSearchPage && facet?.value == linksType">
+      <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"><span class='btn-text'>{{selectedcuisine}}</span>
+        <span class="svg-icon svg-icon-Arrow_down_black pull-right" role="img"></span></button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let filter of facet.subFacets; let k = index" [ngClass]="{'active': selectedcuisine== filter?.value}"><a
+            href="{{dataPrefix}}/category/{{UrlParam}}/{{filter?.value}}.html">{{filter?.value}}</a></li>
+      </ul>
+    </div>
+  </span>
+
+  <div class="filter-button-mobile-view" *ngIf="windowWidth <= 480">
+    <a role="button" (click)="showMobileFilters()"><span class="svg-icon filter-icon"></span>
+      Filter </a>
+  </div>
+  <div class="filter-container" [ngClass]="{'filterMobileView': windowWidth <= 480}">
+    <div class="filter-top-options" *ngIf=" windowWidth <= 480 || fromSearchPage">
+      <div class="panel-heading">
+        <span class="panel-title"><b>Filter <span *ngIf="!fromSearchPage"> ({{selectedFilters.length}})</span></b></span>
+        <a aria-label="clear all filters" tabindex="0" role="button" class="clear-all" (click)="uncheckAllFilters()"
+          (keydown.enter)="uncheckAllFilters()">Clear All</a>
+        <a *ngIf="!fromSearchPage || windowWidth <= 480" role="button" class="apply" (click)="closeMobileFilters()">APPLY</a>
+      </div>
+
+    </div>
+    <div class="filtersLoop" *ngFor="let facet of facets; let i = index">
+      <div class="coupon-filter-container">
+        <span *ngIf="fromSearchPage == true || facet?.value !== linksType">
+          <div class="panel panel-default filter-panel coupon-filter-panel">
+            <div class="row">
+              <div class="col-xs-6 col-sm-8 col-md-8 heading-panel">
+                <h3 class="filter-collapse" data-parent="#accordion" data-toggle="collapse">
+                  <div class="panel-heading">
+                    <span class="panel-title"><b>{{facet.name}}</b></span>
+                  </div>
+                </h3>
+              </div>
+              <div class="col-xs-5 col-sm-4 col-md-4 clear-panel">
+                <span attr.aria-label="clear {{facet.name}} Filters" role="button" tabindex="0" class="clear-btn"
+                  (click)="clearFacetGroup(facet?.value, i)" (keydown.enter)="clearFacetGroup(facet?.value, i)">Clear</span>
+                <a [attr.aria-expanded]="true" attr.aria-label="{{facet.name}}" data-toggle="collapse" data-parent="#accordion"
+                  href="#filter_by_meals_cooking_details_{{facet?.value}}">
+                  <span class="svg-icon svg-icon-Arrow_down_black pull-right"></span>
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+          <div #collapsePanel id="filter_by_meals_cooking_details_{{facet?.value}}" ngClass="filtering-area" [class]="(!linksType && showDropdownOnLoad && i !== 0) || (linksType && showDropdownOnLoad &&  i !== (facets[0]?.value == linksType ? 1 : 0) ) ? 'collapse': 'collapse in'">
+            <!-- <label>
+              <a role="button" (click)="clearFacetGroup(facet?.value, i)">
+                <b>Clear</b>
+              </a>
+            </label> -->
+
+            <div class="subfacet-container">
+              <div class="subfacets">
+                <label>
+                  <fieldset>
+                    <legend class="sr-only">{{facet.name}}</legend>
+                    <div *ngFor="let subfacet of facet.subFacets; let j = index;" style="margin:10px 0">
+                      <div *ngIf="((selectedFilterIndex== i && j < newSubfacetLimit)|| j < subfacetLimit) && subfacet?.count > 0">
+
+
+                        <label class="squaredThree {{facet?.value+'-'+subfacet?.value}}" tabindex="0" *ngIf="subfacet?.value"
+                          id="{{facet?.value+'-'+j}}" 
+                          (keydown.enter)="addFilter(subfacet, facet, checkbox, $event, j)" (keydown.space)="addFilter(subfacet, facet, checkbox, $event, j)">
+                          <input tabindex="-1" #checkbox type="checkbox" role="checkbox" [(ngModel)]="subfacet.checked"
+                            [(checked)]="subfacet.checked" (click)="addFilter(subfacet, facet, checkbox, $event, j)">{{subfacet.value}}
+                          <span *ngIf="fromSearchPage">({{subfacet.count}})</span> <br>
+                          <span class="checkmark"></span>
+                        </label>
+
+
+                        <label class="squaredThree  {{facet?.value+'-'+subfacet?.from+'-'+subfacet?.to}}" tabindex="0"
+                          *ngIf="!subfacet?.value" id="{{facet?.value+'-'+j}}" (keydown.space)="addFilter(subfacet, facet, checkboxTime , $event, j)">
+                          <input tabindex="-1" #checkboxTime type="checkbox" role="checkbox" [(ngModel)]="subfacet.checked"
+                            [(checked)]="subfacet.checked" (click)="addFilter(subfacet, facet, checkboxTime, $event, j)">
+                          <span *ngIf="subfacet?.from && subfacet?.to"> {{subfacet?.from}} to {{subfacet?.to}} min</span>
+                          <span *ngIf="subfacet?.from && !subfacet?.to"> More than {{subfacet?.from}} min </span>
+                          <span *ngIf="!subfacet?.from && subfacet?.to"> Less than {{subfacet?.to}} min </span>
+                          <span *ngIf="fromSearchPage">({{subfacet.count}})</span> <br>
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </label>
+              </div>
+            </div>
+
+            <div class="more-option" *ngIf="facet.subFacets.length > 5 && newSubfacetLimit !== facet.subFacets.length ">
+              <label>
+                <a class="more-options-link" tabindex="0" attr.aria-label=" Show more {{facet.name}} Filters" role="button"
+                  (click)="viewMoreSubFilters(i, facet?.value)" (keydown.enter)="viewMoreSubFilters(i, facet?.value)"
+                  (keydown.space)="viewMoreSubFilters(i, facet?.value)">
+                  <b>More</b>
+                </a>
+              </label>
+            </div>
+            <div class="more-option" *ngIf="facet.subFacets.length == newSubfacetLimit && selectedFilterIndex == i">
+              <label>
+                <a tabindex="0" class="more-options-link" attr.aria-label="Show less {{facet.name}} Filters" role="button"
+                  (click)="viewLessSubFilters(i)" (keydown.enter)="viewLessSubFilters(i)" (keydown.space)="viewLessSubFilters(i)">
+                  <b>Less</b>
+                </a>
+              </label>
+            </div>
+          </div>
+          <div class="row horizontal-spacer horizontal-spacer-filter"></div>
+        </span>
+      </div>
+    </div>
+    <div class="moreFilters" *ngIf="facets.length > 5">
+      <a role="button" (click)="viewMoreFilters()">More</a>
+    </div>
+  </div>
+</div>

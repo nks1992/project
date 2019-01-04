@@ -1,0 +1,55 @@
+<meals-category-filter #filterComponent (setFilters)="filterResults($event)" [searchData]='cardsRawData'></meals-category-filter>
+<div class="col-sm-9 col-md-9 meals-category-main-panel" *ngIf="facetShowDuringFiltering">
+  <h1 class="hidden-xs">{{cuisineType}}</h1>
+  <div class="row meals-category-cards homepage-carousal-container" *ngIf="cardsRawData">
+    <div *ngFor="let card of cardsRawData; let i = index">
+      <div class="homepage-carousal-card-container recipe-card col-sm-4 col-md-4" *ngIf="i < showLimit">
+        <div class="carousal-card">
+          <div class="row">
+            <a href="{{dataPrefix}}/detail/{{card.sourceId_ntk}}/{{card.formattedName}}.html">
+              <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+                <picture>
+                  <source media="(max-width: {{sm}})" srcset="//images.albertsons-media.com/is/image/ABS/{{card.id}}?$recipe-detail-card-mobile$&defaultImage=Not_Available">
+                  <source media="(max-width: {{md}})" srcset="//images.albertsons-media.com/is/image/ABS/{{card.id}}?$recipe-detail-card-tablet$&defaultImage=Not_Available">
+                  <img style="width:100%;" src="//images.albertsons-media.com/is/image/ABS/{{card.id}}?$recipe-detail-card-desktop$&defaultImage=Not_Available"
+                    alt="">
+                </picture>
+              </div>
+              <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+                <div class="carousal-card-heading">
+                  <h3 attr.aria-label="{{card.name}}">{{card.name|slice:0:25}} <span *ngIf="card.name.length > 25">...</span></h3>
+                  <!-- <span class="carousal-content-note">{{card.courseType[0]}}</span> -->
+                  <!-- <span class="carousal-content-note">with crusty topping</span> -->
+                  <span class="carousal-content-note">by {{card.author_ntk ? card.author_ntk: 'Albertsons'}} </span>
+                </div>
+              </div>
+            </a>
+            <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 carousal-content-serves">
+              <span>{{card.recipeYield ? 'serves '+card.recipeYield: ''}}</span><br>
+              <!-- <span>$ 9.99</span> -->
+            </div>
+            <div class="cta" role="presentation">
+              <a href="{{dataPrefix}}/detail/{{card.sourceId_ntk}}/{{card.formattedName}}.html" class="btn btn-default content-block-btn border-black"
+                role="button" attr.aria-label="View recipe for {{card.name}}">
+                View Recipe
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <loading-spinner></loading-spinner>
+
+  <!-- <div class="pading-div" style="padding: 50px;"></div> -->
+
+</div>
+
+<div class="col-sm-9 col-md-9 errorMessagePanel" *ngIf="!facetShowDuringFiltering">
+  <loading-spinner></loading-spinner>
+
+  <h1 *ngIf="cardsRawData.length == 0">No results for {{cuisineType}}</h1>
+  <ul *ngFor="let errorMessage of filterErrorMessages">
+    <li>{{errorMessage}}</li>
+  </ul>
+</div>

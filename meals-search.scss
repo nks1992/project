@@ -1,0 +1,95 @@
+/* --- Import common SASS variables */
+@import "%CommonSassVarsPath%";
+
+/* --- Import banner specific SASS variables */
+@import "%BannerSassVarsPath%";
+
+.meals-searchpage {
+    .product-level-4 {
+        .squaredThree:focus {
+            outline: 2px solid #757575 !important;
+        }
+    }
+
+
+    .search-resultes {
+        h1 {
+            margin-bottom: 30px;
+            padding-left: 12px;
+        }
+    }
+
+    .searchpage-small-banner {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        position: relative;
+        padding: 0;
+
+        img {
+            width: 100%;
+            height: 150px;
+        }
+
+        .search-small-banner-content {
+            position: absolute;
+            display: inline-block;
+            vertical-align: middle;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+
+            .search-small-banner-text {
+                margin: 20px;
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                width: 60%;
+
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+
+                h1 {
+                    margin: 0;
+                    margin-bottom: 10px
+                }
+
+                a {
+                    color: map-get($colors, text);
+                    text-decoration: underline;
+                }
+            }
+
+            &:before {
+                content: ' ';
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1024px) and (min-width: 768px) {
+        .carousal-card-heading {
+            height: 120px !important;
+        }
+
+        .cta a {
+            padding: 10px 0;
+        }
+    }
+
+    @media screen and (max-width:480px) {
+
+        .search-resultes {
+            h1 {
+                font-size: 24px;
+                // margin-left: 0;
+                padding-left: 0;
+
+            }
+        }
+    }
+}

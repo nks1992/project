@@ -1,0 +1,739 @@
+/* --- Import common SASS variables */
+@import "%CommonSassVarsPath%";
+
+/* --- Import banner specific SASS variables */
+@import "%BannerSassVarsPath%";
+
+//<------- homepage main banner--------->
+
+.meals-homepage-wrapper {
+    .landing-cta {
+        .border-black:focus {
+            outline: 2px solid red !important;
+            padding: 4px;
+        }
+    }
+
+    .landing-cta:hover {
+        background-color: #2c2a29;
+    }
+
+    .landing-cta a:hover {
+        color: map-get($colors, white-color) !important;
+        text-decoration: #fff !important;
+    }
+
+    .landing-cta {
+        .border-black {
+            background-color: transparent;
+            color: #4b4b4b;
+        }
+
+        .border-black:hover {
+            background-color: #2c2a29;
+            color: map-get($colors, white-color) !important;
+            text-decoration: none;
+        }
+    }
+
+    // padding-left: 25px;
+    .content-block {
+        .content-block-inner {
+            .hero-caption {
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 1px;
+                line-height: 20px;
+                margin-bottom: 0;
+                text-transform: uppercase;
+            }
+
+            .hero-title {
+                font-size: 48px;
+                font-weight: bold;
+                line-height: 52px;
+                margin-top: 12px;
+
+                .hero-description {
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-top: 10px;
+                    margin-bottom: 33px
+                }
+            }
+        }
+    }
+
+    .coupons-link-wrapper {
+        .coupons-link {
+            color: map-get($colors, global-nav);
+
+            span {
+                // border-bottom: 1px solid map-get($colors, global-nav);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .homepage-main-banner {
+        position: relative;
+
+        .homepage-banner-image {
+            padding: 0;
+
+            img {
+                width: 100%;
+                box-shadow: 0 0 2px map-get($colors, grey-background);
+            }
+        }
+
+        .homepage-banner-content {
+            position: absolute;
+            vertical-align: middle;
+            top: 0;
+            bottom: 0;
+
+            .homepage-content-text {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 40px;
+                width: 80%;
+
+                h5,
+                h1,
+                h3 {
+                    font-weight: bold;
+                }
+
+                h3 {
+                    font-size: 14px;
+                }
+
+                button {
+                    background: map-get($colors, global-nav);
+                    color: map-get($colors, white-color);
+                    padding: 10px 40px;
+                    border: 0;
+                    font-size: 14px;
+                    margin-top: 20px;
+                    cursor: pointer;
+                    font-weight: 600;
+                }
+            }
+
+            &:before {
+                content: ' ';
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%
+            }
+        }
+    }
+
+    //<------- homepage main banner ends--------->
+
+    .recipe-carousel {
+        .slick-prev {
+            left: 0 !important;
+        }
+    }
+
+    //<------- homepage main carousel card--------->
+    .homepage-carousal-style {
+        .slick-slide {
+            height: auto;
+            margin-left: 5px;
+        }
+
+        .slick-next {
+            top: 40%;
+            right: 20px;
+            width: 42px;
+            height: 42px;
+            right: 10px;
+            top: 40%;
+            z-index: 1;
+            background: #fff;
+            -webkit-box-shadow: 0 6px 12px 0 rgba(75, 75, 75, 0.15);
+            -moz-box-shadow: 0 6px 12px 0 rgba(75, 75, 75, 0.15);
+            box-shadow: 0 6px 12px 0 rgba(75, 75, 75, 0.15);
+
+            &:before {
+                content: '';
+                background: url(../../../../../../etc/designs/wcax-commons/images/icons/grey_chevron_right.svg) no-repeat 0 0;
+                color: #2c2a29;
+                float: left;
+                width: 42px;
+                height: 42px;
+                opacity: 1;
+                background-position: 55% 50%;
+            }
+        }
+
+        .slick-prev {
+            height: 42px;
+            width: 42px;
+            left: 0px;
+            z-index: 1;
+            top: 40%;
+            background: #fff;
+            -webkit-box-shadow: 0 6px 12px 0 rgba(75, 75, 75, 0.15);
+            -moz-box-shadow: 0 6px 12px 0 rgba(75, 75, 75, 0.15);
+            box-shadow: 0 6px 12px 0 rgba(75, 75, 75, 0.15);
+
+            &:before {
+                content: '';
+                background: url(../../../../../../etc/designs/wcax-commons/images/icons/grey_chevron_left.svg) no-repeat 0 0;
+                color: #2c2a29;
+                float: left;
+                width: 42px;
+                height: 42px;
+                opacity: 1;
+                background-position: 45% 50%;
+            }
+        }
+    }
+
+
+    //<------- homepage main carousel card ends--------->
+
+
+    //<------- homepage nav carousel desktop--------->      
+
+
+    .homepage-nav-carousal {
+        margin-top: 40px;
+
+        .homepage-nav-carousal-content {
+
+            // padding-left: 10px;
+            .slick-prev {
+                left: 5px;
+            }
+
+            .slick-next {
+                right: 7px;
+            }
+        }
+
+        .category-nav-carousal-heading {
+            .heading-text h2 {
+                font-size: 26px;
+                position: relative;
+                left: -10px;
+                top: -20px;
+
+                .viewAllLink {
+                    font-size: 16px;
+                    color: map-get($colors, global-nav);
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+        .nav-carousal-card-container {
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .homepage-nav-carousal-card {
+            img {
+                width: 100%;
+                position: relative;
+            }
+
+            p {
+                position: relative;
+                bottom: 34px;
+                font-weight: bold;
+                color: map-get($colors, white-color);
+                font-size: 16px;
+                padding: 5px 0;
+                padding-left: 20px;
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+            }
+        }
+
+    }
+
+    //<------- homepage nav carousel ends--------->
+
+    //<------- homepage nav carousel mobile-------->
+
+    .homepage-nav-carousal-mobile {
+        padding: 0;
+
+        .carousal-heading {
+            p {
+                font-size: 24px;
+                margin: 0 15px;
+            }
+        }
+
+        .carousal-heading {
+            p {
+                font-size: 16px;
+                line-height: 52px;
+            }
+        }
+
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+
+        .homepage-nav-carousal-mobile-wrapper {
+            display: block;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                padding: 15px;
+                border-top: 1px solid map-get($colors, primary-border);
+                border-bottom: 1px solid map-get($colors, primary-border);
+
+                a {
+                    color: map-get($colors, text);
+                    font-size: 16px !important;
+                    letter-spacing: 0.51px;
+                    line-height: 22px;
+                }
+            }
+
+            .svg-icon {
+                font-size: 8px;
+            }
+        }
+
+        .main-ul {
+            position: relative;
+            left: 0;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+        }
+
+        .sub-ul {
+            position: absolute;
+            display: block;
+            top: 0%;
+            left: 100%;
+            visibility: hidden;
+            right: 0;
+            padding-left: 0;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+
+            .back-btn {
+                background-color: map-get($colors, white-color);
+
+                span {
+                    margin-right: 20px;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        .homepage-mobile-nav-hide {
+            right: 100%;
+            visibility: hidden;
+        }
+
+        .homepage-mobile-sub-nav-show {
+            left: 0;
+            visibility: visible;
+        }
+    }
+
+    //<------- homepage nav carousel mobile ends-------->   
+
+    //<------- homepage get recipe cards-------->  
+
+    .homepage-get-recipe {
+        margin-bottom: 40px;
+
+        .homepage-get-recipe-container {
+            padding: 0 8px;
+
+            img {
+                width: 100%;
+            }
+
+            .homepage-get-recipe-content {
+                color: map-get($colors, white-color);
+                position: absolute;
+                top: 20px;
+                left: 35px;
+                width: 50%;
+
+                p {
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    line-height: 20px;
+                }
+
+                span {
+                    margin-bottom: 0;
+                    font-size: 30px;
+                    font-weight: bold;
+                    line-height: 36px;
+                }
+
+                a {
+                    font-size: 16px;
+                    color: map-get($colors, white-color);
+                    text-decoration: underline;
+                    font-weight: 600;
+                    line-height: 36px;
+                }
+            }
+
+        }
+    }
+
+    //<------- homepage get recipe cards ends---------> 
+
+
+    //<------- homepage small banner--------->
+
+
+    .homepage-small-banner {
+        margin-bottom: 25px;
+        position: relative;
+        padding: 0;
+
+        img {
+            width: 100%;
+        }
+
+        .home-small-banner-content {
+            position: absolute;
+            display: inline-block;
+            vertical-align: middle;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+
+            .home-small-banner-text {
+                margin: 20px;
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                width: 60%;
+
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+
+            &:before {
+                content: ' ';
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%
+            }
+        }
+
+        .homepage-small-banner-btn {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+
+            right: 30px;
+
+
+            button {
+                background: map-get($colors, global-nav);
+                color: map-get($colors, white-color);
+                padding: 10px 40px;
+                border: 0;
+                font-size: 14px;
+                cursor: pointer;
+                // margin-top: 55%;
+            }
+
+            &:before {
+                content: ' ';
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%
+            }
+        }
+    }
+
+
+    //<------- homepage small banner ends---------->
+
+    .height-freeform {
+        width: 1276px;
+        margin: auto;
+    }
+
+
+    .coupons-carousel .coupons-wrapper .coupons-text-wrapper .coupons-text h2 {
+        font-size: 26px;
+    }
+
+    .coupons-carousel .coupons-wrapper .coupons-link-wrapper a.coupons-link .coupons-link-text {
+        font-size: 16px;
+    }
+
+    .coupons-carousel .coupons-wrapper .coupons-link-wrapper {
+        padding-top: 22px;
+    }
+
+    //-------- tablet view ------------
+
+
+    @media screen and (max-width: 768px) {
+        .height-freeform {
+            width: 100%;
+            margin: auto;
+        }
+
+        .notification-text-mobile-container {
+            display: none;
+        }
+
+        .homepage-main-banner {
+            .homepage-banner-content {
+                top: auto;
+                bottom: 10%;
+            }
+        }
+
+        .homepage-get-recipe {
+            .homepage-get-recipe-container {
+                padding: 15px;
+                padding-top: 0;
+
+                .homepage-get-recipe-content {
+                    span {
+                        font-size: 27px;
+                    }
+                }
+
+            }
+        }
+
+        .homepage-nav-carousal {
+            .slick-dots {
+                bottom: 0;
+            }
+        }
+
+        .homepage-small-banner {
+            padding: 0;
+
+            .home-small-banner-content {
+                width: 90%;
+            }
+        }
+    }
+
+    @media screen and (max-width:480px) and (min-width: 320px) {
+        .content-block {
+            .content-block-inner {
+                .hero-caption {
+                    font-size: 11px;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    line-height: 16px;
+                    margin-bottom: 0;
+                    text-transform: uppercase;
+                }
+
+                .hero-title {
+                    font-size: 22px;
+                    font-weight: bold;
+                    line-height: 26px;
+                    margin-top: 1px;
+
+                    .hero-description {
+                        font-size: 14px;
+                        line-height: 22px;
+                        font-weight: 600;
+                        margin-top: 5px;
+                        margin-bottom: 24px
+                    }
+                }
+            }
+        }
+
+        .coupons-carousel .coupons-wrapper .coupons-text-wrapper .coupons-text h2 {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        .coupons-carousel .coupons-wrapper .coupons-link-wrapper a.coupons-link .coupons-link-text {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 19px;
+        }
+
+        .height-freeform {
+            width: 100%;
+            margin: auto;
+            padding-top: 0;
+
+            .content-block-inner {
+                position: absolute;
+                margin-top: 40px
+            }
+
+            img {
+                width: 105vw !important;
+                left: -15px !important;
+                right: 0 !important;
+                margin: auto;
+                position: relative;
+            }
+        }
+
+        .homepage-get-recipe {
+            padding: 0;
+        }
+
+        .homepage-width-secure {
+            width: 100vw;
+
+            .coupons-carousel-area {
+                padding-left: 0;
+            }
+        }
+
+        .homepage-main-banner {
+            .homepage-banner-image {
+                padding: 0;
+
+                img {
+                    width: 100%;
+                    height: 50vh;
+                }
+            }
+
+            .homepage-banner-content {
+                top: 0;
+                bottom: 0;
+            }
+
+            .homepage-content-text {
+                margin-left: 0 !important;
+
+                button {
+                    margin-top: 0 !important;
+                }
+            }
+        }
+
+        .homepage-nav-carousal {
+            display: none;
+
+            .slick-dots {
+                bottom: 0;
+            }
+        }
+
+        .homepage-get-recipe {
+
+            // margin: 20px 0;
+            .homepage-get-recipe-container {
+                padding: 0;
+                padding-top: 15px;
+
+                .homepage-get-recipe-content {
+                    width: 80%;
+                    left: 50px;
+                    top: 50px;
+
+                    p {
+                        font-size: 11px;
+                        font-weight: 800;
+                        letter-spacing: 1px;
+                        line-height: 16px;
+                    }
+
+                    span {
+                        font-size: 22px;
+                        font-weight: bold;
+                        line-height: 26px;
+                    }
+
+                    a {
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 36px;
+                    }
+                }
+            }
+        }
+
+        .homepage-small-banner {
+            padding: 0;
+
+            img {
+                height: 30vh;
+            }
+
+            .home-small-banner-content {
+                width: 100%;
+
+                .home-small-banner-text {
+                    margin: 5px;
+                    margin-left: 15px;
+                    width: 90%;
+                    vertical-align: baseline;
+
+                    h1 {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .homepage-small-banner-btn {
+                top: inherit;
+                bottom: 10px;
+                right: inherit;
+                left: 20px;
+            }
+        }
+
+        .breadscrum {
+            margin-bottom: 30px;
+
+            a {
+                color: map-get($colors, text);
+                font-size: 16px;
+                font-weight: bold;
+
+                span {
+                    margin-right: 8px;
+                }
+
+                .svg-icon {
+                    font-size: 6px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .coupons .slick-slide {
+            width: 245px;
+        }
+    }
+
+
+
+}
